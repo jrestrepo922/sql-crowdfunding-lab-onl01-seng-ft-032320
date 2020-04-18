@@ -21,8 +21,8 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_summed_amount
-  "SELECT u.name, SUM(u.amount) FROM users u
-   JOIN pledges pl ON pl.user_id = u.id GROUP BY u.name ORDER BY SUM(u.amount); "
+  "SELECT u.name, SUM(pl.amount) FROM users u
+   JOIN pledges pl ON pl.user_id = u.id GROUP BY u.name ORDER BY SUM(pl.amount); "
 end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
